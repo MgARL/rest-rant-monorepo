@@ -17,7 +17,7 @@ function LoginForm() {
 
     async function handleSubmit(e) {
         e.preventDefault()
-       const response = await fetch(`${process.env.REACT_APP_SERVER_URL}authentication/`, {
+       const response = await fetch(`${process.env.REACT_APP_SERVER_URL}api/authentication/`, {
            method: 'POST',
            headers: {
                'Content-Type': 'application/json'

@@ -21,9 +21,14 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(express.urlencoded({ extended: true }))
 
-app.use('/places', require('./controllers/places'))
-app.use('/users', require('./controllers/users'))
-app.use('/authentication', require('./controllers/authentication'))
+const router = express.Router()
+
+
+router.use('/places', require('./controllers/places'))
+router.use('/users', require('./controllers/users'))
+router.use('/authentication', require('./controllers/authentication'))
+
+app.use('/api', router)
 
 // Listen for Connections
 app.listen(process.env.PORT, () => {
