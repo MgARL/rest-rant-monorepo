@@ -13,7 +13,7 @@ function NewCommentForm({ place, onSubmit }) {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}users`)
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}api/users`)
             const users = await response.json()
             setComment({ ...comment, authorId: users[0]?.userId})
         }

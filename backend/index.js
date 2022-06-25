@@ -8,7 +8,9 @@ const app = express();
 const defineCurrentUser = require('./midddleware/difineCurrentUser')
 
 // Express Settings
-app.use(cors())
+app.use(cors({
+    origin: "*"
+}))
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(bodyParser.json())
